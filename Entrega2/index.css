@@ -1,5 +1,5 @@
 * {
-    background-color: rgb(236, 198, 148);
+    background-color: rgb(194, 173, 145);
   color:grey;
   font-family: 'Alfa Slab';
   font-size: 30px;
@@ -9,6 +9,15 @@
     background-color: rgb(243, 194, 89);
   ;
    
+  }
+  .selectpizza{
+    color: rgb(26, 119, 173);
+    display: flexbox;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    margin-top: 105px;
   }
   .MamaPizzas{
     width: 400px;
@@ -21,22 +30,15 @@
   .titulo{
     color: rgb(26, 119, 173);
   }
-  .container{
-    display: flex;
-    justify-content: center;
-    margin-top: 105px;
-  }
+  
   .buttonPedir{
     background-color: #d6a828;
     border: none;
     color: white;
-    padding: 10px 32px;
+    padding: 15px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 50px;
   }
-  .selectpizza{
-    color: rgb(26, 119, 173);
-    display: flexbox;
-  }
+  
