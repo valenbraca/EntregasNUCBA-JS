@@ -42,7 +42,7 @@ body {
 }
 #press-button:hover {
   background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgb(252, 122, 122) 0%, rgb(207, 47, 7) 100%);
+  background: linear-gradient(90deg, rgb(252, 122, 122) 0%, rgb(212, 25, 12) 100%);
 }
 .pizzas-container small {
   color: #ff1111;
