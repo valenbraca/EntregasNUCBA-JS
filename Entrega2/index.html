@@ -1,34 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One:wght@400;700&display=swap" rel="stylesheet">
     <title>Mama's Pizzeria</title>
-    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
-    <link rel="stylesheet" href="./index.css" />
-  </head>
-
-  <body>
-  <div class="Menu">
-    <h2 id="carta">Carta de Pizzas</h2>
-
-    <h4 id="descripcion" class="titulo">
-      El menu cuenta con 6 opciones, selecciona el numero que deseas solicitar:
-    </h4>
-    <div>
-<label>
-    <input type="number" id="input" class="selectpizza"/>
-  </label>
-  <p> </p>
+</head>
+<body>
+  <div class="pizzas-container flex-container">
+      <h1>Ordene su Pizza</h1>
+      <h2 id="h2"></h2>
+      <h4 id="h4"></h4>
+      <small></small>
+      <input type="number" name="number" id="number" placeholder="Selecccione entre las 6 opciones de menu" autocomplete="off">
+      <input type="button" id="press-button" value="Pedir">
+      <div class="pizzas-img-container">
+        <img src="mamapizzeria.png" alt="mamapizzeria">
     </div>
-    <button id="btn" class="buttonPedir">Pedir</button>&nbsp;
-   
-    <div class="container">
-    <img src="/Entrega2/mamapizzeria.png" alt="Pizzalogo" class="MamaPizzas">
     </div>
-
-</div>
-    <script src="main.js"></script>
+  <script src="main.js"></script>
+</body>
   </body>
 </html>

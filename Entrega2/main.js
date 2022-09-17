@@ -1,56 +1,74 @@
-const input = document.getElementById("input");
-const h2 = document.getElementById("carta");
-const h4 = document.getElementById("descripcion");
-const btn = document.getElementById("btn");
-
-
+// constructor
 class pizza {
-    constructor(ID, nombre, ingredientes, precio) {
-        this.ID = ID
-        this.nombre = nombre
-        this.ingredientes = ingredientes
-        this.precio = precio
+    constructor(id, nombre, ingredientes, precio){  
+        this.id = id;
+        this.nombre = nombre;
+        this.ingredientes = ingredientes;
+        this.precio = precio;
     }
-
-}
-
-let pizzas = [margarito = new pizza(`1`, `Margarito`, ingredientes = [`salsa`, `muzza`, `oregano`], 1630),
-    prosciutto = new pizza(`2`, `Procciutto`, ingredientes = [`salsa`, `muzza`, `jamon`, `morron`], 1840),
-    napoletana = new pizza(`3`, `Napoletana`, ingredientes = [`salsa`, `muzza`, `toamte`, `ajo`], 2090),
-    cipolla = new pizza(`4`, `Cipolla`, ingredientes = [`salsa`, `muzza`, `cebolla`, `oregano`], 1450),
-    funghi = new pizza(`5`, `Funghi`, ingredientes = [`salsa`, `muzza`, `hongos`, `roquefort`], 1970),
-    pepperoni = new pizza(`6`, `Pepperoni`, ingredientes = [`salsa`,`muzza`, `pepperoni`], 1930),
-]
-
-
-const saveLocalStorage = (pizzas) => {
-    localStorage.setItem('pizzas2', JSON.stringify(pizzas))
 };
-saveLocalStorage(pizzas)
+//arrat
+const Pizzas = [
+    new pizza(1, 'Margarito', ['salsa','muzza','oregano'],'1630'),
+    new pizza(2, 'Prosciutto', ['salsa','muzza','jamon','morron'],'1840'),
+    new pizza(3, 'Napoletana', ['salsa','muzza','tomate','ajo'],'2090'),
+    new pizza(4, 'Cipolla', ['salsa','muzza','cebolla','oregano'],'1450'),
+    new pizza(5, 'Funghi', ['salsa', 'muzza','hongos','roquefort'],'1970'),
+    new pizza(6, 'Pepperoni', ['salsa','muzza', 'pepperoni'],'1930')
+];
+//variables
+const h2 = document.getElementById("h2");
+const h4 = document.getElementById("h4");
+const inputNumber = document.getElementById("number");
+const button = document.getElementById("press-button");
+//render
+const showPizza = () => {
+    const valor = inputNumber.value.trim();
+    const pizza = Pizzas.filter((e) => e.id == valor);
 
-let getPizzas = JSON.parse(localStorage.getItem('pizzas2'));
+    const nombre = pizza.map((e) => e.nombre);
+    const precio = pizza.map((e) => e.precio);
 
+    if(!valor.length) {
+        alert("Elija una opcción");
+        return
+    } else if (!pizza.length) {
+        showError(inputNumber,"Seleccione entre las opciones disponibles del menu");
+        inputNumber.value = "";
+        renderPizza(nombre,precio);
+        return
+    } else {
+        showSuccess(inputNumber);
+    };
 
-btn.addEventListener('click', button)
+    inputNumber.value = "";
+    renderPizza(nombre,precio);
+};
 
-
-function filtro(inputID) {
-    const laPizza = pizzas.filter((piza) => piza.ID == inputID)
-    for (piza of laPizza) {
-        h2.innerHTML = `${piza.nombre}`;
-        h4.innerHTML = `${piza.precio}`;
-    }
+const showError = (input,message) => {
+    const pizzasContainer = input.parentElement;
+    const error = pizzasContainer.querySelector("small");
+    error.textContent = message;
 }
 
-function error() {
-
-    h2.innerHTML = `Seleccione las opciones disponibles`;
-    h4.innerHTML = ``;
-
+const showSuccess = (input) => {
+    const pizzasContainer = input.parentElement;
+    const error = pizzasContainer.querySelector("small");
+    error.textContent = "";
 }
 
-function button(e) {
-    e.preventDefault();
-    var inputID = input.value.trim();
-    inputID <= pizzas.length && inputID > 0 ? filtro(inputID) : error();
-}
+const renderPizza = (titulo,precio) => {
+    if(titulo.length && precio.length) {
+        h2.innerHTML = `${titulo}`;
+        h4.innerHTML = `$${precio}`;
+    } else {
+        h2.innerHTML = "";
+        h4.innerHTML = "";
+    }; 
+};
+
+const init = () => {
+    button.addEventListener("click", showPizza);
+};
+
+init();
