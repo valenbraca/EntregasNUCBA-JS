@@ -1,0 +1,92 @@
+* {
+    font-family: 'Alfa Slab', sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 197, 89);
+    color: black;
+  }
+
+  .input-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 1em;
+    gap: 5px;
+  }
+
+  .input-box {
+    padding: 20px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.container-alert {
+    display: flex;
+    flex-direction: column;}
+
+.alert {
+    border: 2px solid rgb(180, 0, 0);
+}
+
+.small {
+    color: rgb(180, 0, 0);
+    font-size: 1em;
+
+}
+
+.press-button {
+    width: 100px;
+    height: 60px;
+    font-size: 1.5em;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(253, 106, 106) 0%, rgb(238, 63, 19) 100%);
+  }
+  .press-button:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(252, 122, 122) 0%, rgb(212, 25, 12) 100%);
+  }
+
+  .card-pizzas {
+    border-radius: 10px;
+    background-color: rgb(233, 225, 225);
+    margin-top: 2em;
+    width: 375px;
+    height: 375px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.card-pizzas img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(10px 10px 20px rgb(53, 51, 51));
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-pizzas h3 {
+    font-size: 2em;
+    margin-top: 3.1em;
+
+}
+
+.card-pizzas p {
+    font-size: 1em;
+    
+}
+
+p1 {
+    font-size: 1em;
+    margin-top: 1em;
+    font-weight: 600;
+}
